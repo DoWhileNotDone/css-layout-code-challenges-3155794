@@ -9,7 +9,20 @@
 }
 
 .block {
-  
+  flex: 1 0 10ch;
   padding: 0 1rem;
   border: 0.5rem solid green;
+}
+
+@solution (flex) {
+
+  .wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .block {
+    flex: 1 0 10ch;
+  }
 }

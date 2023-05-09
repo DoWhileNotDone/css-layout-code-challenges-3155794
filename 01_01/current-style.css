@@ -3,10 +3,48 @@
   width: clamp(calc(320px - 3rem), 75%, 70ch);
   height: calc(75vh - 2.5rem);
   border: 0.5rem solid black;
+  display: grid;
+  justify-items: center;
+  align-items: center;
 }
 
 .child {
   padding: 0 2rem;
   width: 50%;
   border: 0.5rem solid red;
+}
+
+.vertical-center {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+@solution (with-flex) {
+  .wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+@solution (with-grid-one) {
+  .wrapper {
+    display: grid;
+  }
+
+  .child {
+    justify-self: center;
+    align-self: center;
+  }
+}
+
+@solution(with-grid-two) {
+  .wrapper {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+  }
 }

@@ -1,3 +1,4 @@
+/* Original */
 .wrapper {
   margin: 0 auto;
   width: clamp(calc(320px - 3rem), 75%, 70ch);
@@ -13,6 +14,10 @@
   list-style: none;
   margin: 1rem;
   padding: 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+
 }
 
 .grid li {
@@ -24,4 +29,53 @@
 
 li.featured {
   border-color: purple;
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+@solution (grid) {
+  .grid ul {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+  }
+
+  .featured {
+    grid-column: span 2;
+    grid-row: span 2;
+  }
+}
+
+/* 4 column grid
+featured item - two rows, or two cols */
+
+/* Stolen */
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  background-color: #2196F3;
+  padding: 10px;
+}
+
+.grid-item {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
+}
+
+/* Practice */
+.practice .grid ul {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  list-style: none;
+  margin: 1rem;
+  padding: 0;
+}
+
+.practice .featured {
+  grid-column: span 2;
+  grid-row: span 2;
 }
